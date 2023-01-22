@@ -12,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 function Products() {
   const productService = new ProductService();
   const [data, setData] = useState<ResponseModel[]>([]);
-  const [error, setError] = useState("");
-  const [open, setOpen] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
   const [modalType, setModalType] = useState<boolean>(false);
   const [newData, setNewData] = useState<Product>({
     id: 0,
@@ -62,7 +62,7 @@ function Products() {
     });
   };
 
-  const handleOk = (event: any) => {
+  const handleOk = (event: React.SyntheticEvent) => {
     if (!newData.name.trim()) {
       alert("Please fill all inputs");
       return;

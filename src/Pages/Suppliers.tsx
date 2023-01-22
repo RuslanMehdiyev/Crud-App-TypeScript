@@ -12,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 function Suppliers() {
   const suppliersService = new SupplierService();
   const [data, setData] = useState<ResponseModel[]>([]);
-  const [error, setError] = useState("");
-  const [open, setOpen] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
   const [modalType, setModalType] = useState<boolean>(false);
   const [newData, setNewData] = useState<Supplier>({
     id: 0,
@@ -122,7 +122,7 @@ function Suppliers() {
     });
   };
 
-  const handleUpdate = (event: any) => {
+  const handleUpdate = (event: React.SyntheticEvent) => {
     event.preventDefault();
     setOpen(false);
     suppliersService

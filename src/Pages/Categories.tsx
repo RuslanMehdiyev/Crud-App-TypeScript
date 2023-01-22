@@ -12,8 +12,8 @@ import { useNavigate } from "react-router-dom";
 function Categories() {
   const categoryService = new CategoryService();
   const [data, setData] = useState<ResponseModel[]>([]);
-  const [error, setError] = useState("");
-  const [open, setOpen] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
   const [modalType, setModalType] = useState<boolean>(false);
   const [newData, setNewData] = useState<Category>({
     id: 0,
@@ -103,7 +103,7 @@ function Categories() {
     setNewData({ id: item.id, name: item.name, description: item.description });
   };
 
-  const handleUpdate = (event: any) => {
+  const handleUpdate = (event: React.SyntheticEvent) => {
     event.preventDefault();
     setOpen(false);
     categoryService
