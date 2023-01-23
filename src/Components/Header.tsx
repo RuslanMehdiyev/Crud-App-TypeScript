@@ -16,9 +16,11 @@ function Header() {
           <NavLink to={"/"}>Suppliers</NavLink>
           <NavLink to={"/products"}>Products</NavLink>
           <NavLink to={"/categories"}>Categories</NavLink>
+         <NavLink to={"query"}>Categories Query</NavLink>
         </div>
         <div>
-          {loggedIn ? (
+         <>
+         {loggedIn ? (
             <button
             className="log-out"
               onClick={() => {
@@ -31,6 +33,7 @@ function Header() {
           ) : (
             <NavLink to={"/login"}>Log In</NavLink>
           )}
+         </>
         </div>
       </ul>
     </div>

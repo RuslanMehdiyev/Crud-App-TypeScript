@@ -1,4 +1,4 @@
-export interface ResponseModel {
+export interface ResponseModel  {
   data: any;
   status: boolean;
   statusCode: number;
